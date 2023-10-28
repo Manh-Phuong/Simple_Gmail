@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SimpleGmail</string>
+    <string name="note">Touch a sender image to select that conversation.</string>
+</resources>
