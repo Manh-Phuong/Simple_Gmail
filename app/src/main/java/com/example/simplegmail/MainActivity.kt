@@ -1,8 +1,11 @@
 package com.example.simplegmail
 
+import MessageAdapter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +20,11 @@ class MainActivity : AppCompatActivity() {
         messages.add(MessageModel("support", "Announcing the all-new", "10:26 AM", false))
         messages.add(MessageModel("Matt from lonic", "The New lonic Creator is here", "9:23 AM", false))
 
-        findViewById<ListView>(R.id.list_view).adapter = MessageAdapter(messages)
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        val layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = layoutManager
+
+        findViewById<RecyclerView>(R.id.recycler_view).adapter = MessageAdapter(messages)
+
     }
 }
